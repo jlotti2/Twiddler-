@@ -2,6 +2,8 @@ $(document).ready(() => {
   const $body = $('body');
   $body.html(''); // clear body when the page loads
 
+  
+
   // Create a button for showing new tweets
   const $button = $('<button>Show New Tweets</button>');
   $body.append($button);
@@ -82,6 +84,20 @@ $(document).ready(() => {
       alert("Please write a message before tweeting.");
     }
   });
+
+  const writeTweet = (message) => {
+    const visitor = window.visitor;
+  
+    if (!visitor){
+      throw new Error('Set the global visitor property!');
+    }
+  
+    const tweet = {
+      user: visitor,
+      message: message,
+    };
+    addTweet(tweet);
+  };
 
   // Optionally, call createNewTweets once to display tweets on page load
   createNewTweets();
