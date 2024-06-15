@@ -25,6 +25,9 @@ textarea {
     outline: #ddd;
     font-size: 1.2rem;
 }
+button {
+    align-items: center
+}
 .submit {
     width: 100%;
     text-align: right;
